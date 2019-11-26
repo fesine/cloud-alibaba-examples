@@ -45,7 +45,7 @@
 			<artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>
 		</dependency>
 
-
+		<!--引入限流框架-->
 		<dependency>
 			<groupId>com.alibaba.cloud</groupId>
 			<artifactId>spring-cloud-starter-alibaba-sentinel</artifactId>
