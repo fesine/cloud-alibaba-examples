@@ -2,6 +2,7 @@ package com.fesine.payment.controller;
 
 import com.fesine.payment.po.Balance;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -17,6 +18,7 @@ import java.util.Map;
  * @author: fesine
  * @updateTime:2019/11/26
  */
+@RefreshScope
 @RestController
 public class PaymentController {
     @Value("${sleep:0}")
