@@ -19,6 +19,7 @@
     <modelVersion>4.0.0</modelVersion>
     <modules>
         <module>payment-service</module>
+        <module>account-service</module>
     </modules>
 
     <dependencyManagement>
@@ -37,15 +38,25 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
+<!--            配置中心-->
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>
                 <version>${alibaba.version}</version>
             </dependency>
+<!--            注册中心-->
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
                 <version>${alibaba.version}</version>
+            </dependency>
+<!--            Feign-->
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-openfeign-dependencies</artifactId>
+                <version>2.1.1.RELEASE</version>
+                <type>pom</type>
+                <scope>import</scope>
             </dependency>
         </dependencies>
     </dependencyManagement>

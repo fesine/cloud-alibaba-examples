@@ -1,0 +1,6 @@
+spring:
+  profiles:
+    active: dev
+server:
+  port: 8051
+sleep: 0
