@@ -1,5 +1,7 @@
 package com.fesine.payment.controller;
 
+import com.alibaba.csp.sentinel.annotation.SentinelResource;
+import com.alibaba.csp.sentinel.slots.block.BlockException;
 import com.fesine.payment.po.Balance;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
@@ -32,6 +34,10 @@ public class PaymentController {
         }
     };
 
+    /**
+     * 使用sentinel进行限流熔断
+     */
+    @SentinelResource(value = "protected-resource", blockHandler = "handleBlock")
     @RequestMapping("/pay/balance/{id}")
     public Balance getBalance(@PathVariable Integer id) {
         System.out.println("request: /pay/balance?id=" + id + ", sleep: " + sleep);
@@ -46,6 +52,11 @@ public class PaymentController {
             return balanceMap.get(id);
         }
         return new Balance(0, 0, 0);
+    }
+
+    public Balance handleBlock(Integer id, BlockException e) {
+        System.out.println("请求太快，进行限流");
+        return new Balance(0, 0, 0, "限流");
     }
 
 }
