@@ -1,0 +1,9 @@
+spring:
+  profiles:
+    active: dev
+  redis:
+    host: 10.211.55.130
+    port: 6379
+server:
+  port: 8003
+sleep: 0
