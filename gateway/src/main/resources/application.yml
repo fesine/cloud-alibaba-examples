@@ -6,4 +6,6 @@ spring:
     port: 6379
 server:
   port: 8003
+logging:
+  config: classpath:log4j2-spring.xml
 sleep: 0
