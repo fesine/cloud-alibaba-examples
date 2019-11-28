@@ -1,0 +1,16 @@
+spring:
+  profiles:
+    active: dev
+dubbo:
+  registry:
+    address: spring-cloud://localhost
+  cloud:
+    subscribed-services: ${provider.application.name}
+  application:
+    qos:
+      enable: false
+server:
+  port: 8061
+provider:
+  application:
+    name: payment-dubbo-service

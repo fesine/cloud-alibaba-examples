@@ -22,6 +22,7 @@
         <module>account-service</module>
         <module>gateway</module>
         <module>payment-dubbo-service</module>
+        <module>account-dubbo-service</module>
     </modules>
 
     <dependencyManagement>
