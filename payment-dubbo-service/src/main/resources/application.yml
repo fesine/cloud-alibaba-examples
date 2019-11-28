@@ -1,0 +1,15 @@
+spring:
+  profiles:
+    active: dev
+dubbo:
+  scan:
+    base-packages: com.fesine.payment.service
+  protocols:
+    dubbo:
+      name: dubbo
+      port: -1
+  registry:
+    address: spring-cloud://localhost
+  application:
+    qos:
+      enable: false
